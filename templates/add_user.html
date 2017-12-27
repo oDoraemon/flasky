@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}
+    Flasky - AddUser
+{% endblock %}
+
+{% block page_content %}
+    {{ wtf.quick_form(form) }}
+    {% for user in all_user %}
+        <p>{{ user.email }}</p>
+        <p>{{ user.name }}</p>
+    {% endfor%}
+{% endblock %}
+{% block styles %}
+{{ super() }}
+<style>
+form{
+    width: 25%;
+    margin: auto;
+}
+</style>
+
+{% endblock %}
