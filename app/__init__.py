@@ -20,6 +20,7 @@ def create_app(config_name):
     moment.init_app(app)
     db.init_app(app)
 
-    #todo:
-    # 附加路由和自定义错误页面
+    from .main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
+
     return app
