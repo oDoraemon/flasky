@@ -5,13 +5,13 @@ from wtforms import ValidationError
 from ..models import User
 
 class LoginForm(FlaskForm):
-    email = StringField('Email', validators=[Required(), Length(1,64),
+    email = StringFi eld('Email', validators=[Required(), Length(1,64),
                         Email()])
     password = PasswordField('Password', validators=[Required()])
-    remeber_me = BooleanField('Keep me logged in')
+    remeber_me = BooleanField('Keep me logged in') 
     submit = SubmitField('Log In')
 
-class RegistrationForm(Form):
+class RegistrationForm(FlaskForm):
     msg = 'Usernames must have only letters, numbers, dots or underscores'
     email = StringField('Email', validators=[Required(), Length(1,64),
                         Email()])
